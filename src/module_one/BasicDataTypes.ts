@@ -34,8 +34,25 @@ TypeScript Basic Data Types
   let student: [number, string];
 
   student = [1, "d"];
-  student.push("s",1);
-  
+  student.push("s", 1);
+
   console.log(student);
 
+  // Reference Type --> Object
+
+  const user: {
+    company:"Futurionic" // Type --> literal types
+    firstName: string;
+    middleName?: string;
+    lastName: string;
+  } = {
+    company:"Futurionic", 
+    firstName: "Readul",
+    middleName: "Islam",
+    lastName: "Akash",
+  };
+
+
+
+  // Function in Typescript
 }
