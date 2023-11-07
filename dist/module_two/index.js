@@ -43,3 +43,17 @@ const user3 = {
     roll: 10,
     role: "Admin",
 };
+const roll1 = [1, 2, 3];
+const roll2 = [1, 2, 3];
+const addTwoNum = (num1, num2) => {
+    return num1 + num2;
+};
+// const mentor:string[] = ["ali","sagor" ]
+// const mentors:Array<string> = ["ali","sagor"]
+const mentors = ["ali", "sagor"];
+// const rollNumber:number[] = [1,2,3,4]
+// const rollNumber1:Array<number> = [1,2,3,4]
+const rollNumber1 = [1, 2, 3, 4];
+// const boolArray:boolean[] = [true, false]
+// const boolArray1:Array<boolean> =  [true, false]
+const boolArray1 = [true, false];

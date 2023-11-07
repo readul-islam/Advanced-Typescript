@@ -37,7 +37,7 @@ try {
   console.log((error as CustomError).message);
 }
 
-// interface , type vs interface
+// interface , type vs interface 2-2
 
 // for all primitive dataTypes we will use Type alias (extend with intersection)
 
@@ -76,3 +76,47 @@ const user3: UserWithRole1 = {
   roll: 10,
   role: "Admin",
 };
+
+// interface with array
+
+// with type alias
+type Roll1 = number[];
+
+const roll1: Roll1 = [1, 2, 3];
+
+// with interface
+
+interface Roll2 {
+  [index: number]: number; // index signature
+}
+const roll2: Roll2 = [1, 2, 3];
+
+// function with type and interface
+
+type Add1 = (num1: number, num2: number) => number;
+
+interface Add2 {
+  (num1: number, num2: number): number;
+}
+
+const addTwoNum: Add2 = (num1, num2) => {
+  return num1 + num2;
+};
+
+
+// Introduction to Generics Type 2-3
+
+type GenericArray<T> = Array<T>;
+
+
+// const mentor:string[] = ["ali","sagor" ]
+// const mentors:Array<string> = ["ali","sagor"]
+const mentors:GenericArray<string> = ["ali","sagor"]
+
+// const rollNumber:number[] = [1,2,3,4]
+// const rollNumber1:Array<number> = [1,2,3,4]
+const rollNumber1:GenericArray<number> = [1,2,3,4]
+
+// const boolArray:boolean[] = [true, false]
+// const boolArray1:Array<boolean> =  [true, false]
+const boolArray1:GenericArray<boolean> =  [true, false]
