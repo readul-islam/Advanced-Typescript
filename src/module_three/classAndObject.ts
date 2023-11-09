@@ -61,17 +61,61 @@ class Student extends Person {
     this.studyClass = studyClass;
   }
 
-
   getCity(name: string) {
-    console.log(`Your city is ${name}`)
+    console.log(`Your city is ${name}`);
   }
 }
 
 let readul = new Student("readul", 32, "Bangladesh", 64, 6.4, "Nine");
 
-console.log(readul.getBMI())
-console.log(readul.getCity("Barishal"))
+console.log(readul.getBMI());
+console.log(readul.getCity("Barishal"));
 
 // 3-3: Type guard using typeof & in
 
 // (typeof) and (key in object) using for type guard or type checking
+
+const addTwoNumbers = (a: number | string, b: number | string) : number | string | undefined=> {
+ if(typeof a === "number" && typeof b === "number"){
+  return (a+b)
+ }if(typeof a === "string" && typeof b === "string"){
+  return a.toString() + b.toString()
+ }
+ else{
+  return `your input is ${a} and ${b} wrong type`
+ }
+};
+
+console.log(addTwoNumbers(1,2))
+
+
+type NormalUser ={
+  name:string,
+  id:number
+}
+
+type AdminUser ={
+ name:string,
+ id:number,
+ role:string
+}
+
+
+const checkIsAdmin=(user:NormalUser | AdminUser)=>{
+
+  if("role" in user){
+    console.log(`You are ${user.role}`)
+  }else{
+    console.log('You are normal user')
+  }
+}
+
+
+checkIsAdmin({name:"readul", id:1, role:'Admin'})
+checkIsAdmin({name:"readul", id:1, })
+
+
+
+// 3-4: Type guard using instance of
+
+
